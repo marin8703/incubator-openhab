@@ -1,0 +1,41 @@
+sitemap demo label="Hummingbird Incubator Project"
+{
+	Frame {
+		Group item=gGF label="Hummingbird Headquarters" icon="groundfloor"
+
+	}
+
+	Frame label="Date" {
+		Text item=Date
+	}
+
+	Frame label="Examples" {
+
+		Text label="Widget Overview" icon="chart" {
+			Frame label="Binary Widgets" {
+				Switch item=DemoSwitch label="Toggle Switch"
+				Switch item=DemoSwitch label="Button Switch" mappings=[ON="On"]
+			}
+			Frame label="Discrete Widgets" {
+				Selection item=Scene_General label="Scene Selection" mappings=[0=off, 1=TV, 2=Dinner, 3=Reading]
+				Switch item=Scene_General label="Scene" mappings=[1=TV, 2=Dinner, 3=Reading]
+				Setpoint item=Temperature_Setpoint minValue=16 maxValue=28 step=0.5
+			}
+			Frame label="Percent-based Widgets" {
+				Slider item=DimmedLight switchSupport
+				Colorpicker item=RGBLight icon="slider"
+				Switch item=DemoShutter
+				Slider item=DemoBlinds
+			}
+		}
+		Text label="Multimedia" icon="video" {
+
+			Frame label="Multimedia Widgets" {
+				Image url="http://marin.assaliyski.name/img/client_hummingbird.png" label="Hummingbird Technologies Inc" 
+					Text label="http://www.hburd.com" icon="icon"
+				}
+				Video url="http://demo.openhab.org/Hue.m4v"
+			}
+		}
+	}
+}
